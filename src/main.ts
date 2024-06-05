@@ -13,6 +13,10 @@ async function bootstrap() {
     new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }),
   );
 
+  app.enableCors({
+    origin: '*',
+  });
+
   const config = new DocumentBuilder()
     .setTitle('Todo List API')
     .setDescription('Todo list API developed for FTC workshop')
